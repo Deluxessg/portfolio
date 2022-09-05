@@ -1,0 +1,17 @@
+<ul class="projects-list">
+    {{#each projects}}
+        <li data-aos="fade-left" data-aos-delay="{{@index}}00">
+            <article class="project-card">
+                <h3>{{title}}</h3>
+                <a href="/{{slug}}">
+                    <img
+                        data-src="{{cover}}"
+                        alt="{{title}}"
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+P///38ACfsD/QVDRcoAAAAASUVORK5CYII="
+                    />
+                </a>
+                <p>{{description}}</p>
+            </article>
+        </li>
+    {{/each}}
+</ul>

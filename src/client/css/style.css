@@ -1,0 +1,304 @@
+@import "normalize.css";
+@import "../../../node_modules/aos/dist/aos.css";
+
+:root {
+    --backgroundColor: #26c291;
+    --mainColor: #1f3b47;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: "helvetica neue", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+a {
+    color: black;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 1rem;
+    line-height: 4rem;
+    background-color: white;
+    z-index: 1;
+}
+
+.nav.scrolled {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.nav>a {
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.nav>a:last-child {
+    margin-left: auto;
+}
+
+.nav>a.current {
+    font-weight: bold;
+}
+
+.nav>a.github {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav>a.github:before {
+    content: '';
+    position: relative;
+    left: 0;
+    margin-right: .25rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('https://github.githubassets.com/pinned-octocat.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.page-index .nav {
+    background-color: var(--backgroundColor);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.column {
+    width: 960px;
+    margin: 0 auto;
+}
+
+body>footer {
+    line-height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero {
+    padding: 0rem;
+    height: 500px;
+    color: var(--mainColor);
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.3rem;
+}
+
+.hero .hero-content>div {
+    display: flex;
+    align-items: center;
+}
+
+.hero .profile-picture {
+    width: 200px;
+    height: 212px;
+    margin-right: 2rem;
+}
+
+.hero ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+}
+
+.hero ul li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.hero .contact {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: var(--mainColor);
+    color: var(--backgroundColor);
+}
+
+.hero .contact:hover {
+    opacity: 0.8;
+}
+
+.page-index .projects-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.projects-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-list li img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.projects-list li img.loaded {
+    opacity: 1;
+}
+
+.projects-list li img:hover {
+    opacity: 0.8;
+}
+
+.page-index .about-section {
+    padding: 3rem;
+    background-color: var(--mainColor);
+    color: var(--backgroundColor);
+}
+
+.text p,
+.text ul {
+    font-size: 1.2rem;
+    line-height: 1.616;
+    margin-bottom: 2rem;
+}
+
+.text blockquote {
+    font-style: italic;
+    margin-left: 0;
+    border-left: 1rem solid rgba(0, 0, 0, 0.5);
+    padding-left: 1rem;
+}
+
+.text img {
+    max-width: 100%;
+}
+
+.page-about,
+.page-contact,
+[class^="page-project"] {
+    padding-top: 5rem;
+}
+
+[class^="page-project"] .project img,
+.page-about img {
+    min-width: 640px;
+    aspect-ratio: 16/9;
+}
+
+@media screen and (max-width: 960px) {
+    .hero {
+        height: auto;
+    }
+
+    .column {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .hero .hero-content>div {
+        flex-direction: column;
+    }
+
+    .hero .profile-picture {
+        margin-bottom: 2rem;
+        margin-right: 0;
+    }
+
+    .hero ul,
+    .hero .contact {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .projects-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    [class^="page-project"] .project img {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .page-index .nav,
+    .nav {
+        background-color: var(--mainColor);
+        line-height: 3rem;
+        justify-content: space-between;
+    }
+
+    .nav a {
+        color: var(--backgroundColor);
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .nav>a:last-child {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 5rem;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        letter-spacing: normal;
+    }
+
+    .hero ul {
+        margin: 0 0 2rem 0;
+        font-size: 1.2rem;
+    }
+
+    .page-index .about-section {
+        padding: 1rem;
+    }
+
+    .projects-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

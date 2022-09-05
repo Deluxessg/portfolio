@@ -1,0 +1,6 @@
+<nav class="nav">
+    {{#each config.nav}}
+    <a href="{{getLink .}}" class="{{getNavClass . ..}}">{{title}}</a>
+    {{/each}}
+    <a class="github" href="{{config.github}}">See on Github</a>
+</nav>

@@ -1,0 +1,29 @@
+{
+    "profile_picture": "https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Prescription01&hairColor=SilverGray&facialHairType=BeardMajestic&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Happy&eyebrowType=Default&mouthType=Serious&skinColor=DarkBrown",
+    "github": "https://github.com/spicedacademy/portfolio-skeleton",
+    "contact": {
+        "email": "hello@example.com"
+    },
+    "nav": [
+        {
+            "title": "Home",
+            "slug": "index",
+            "link": "/"
+        },
+        {
+            "title": "Projects",
+            "slug": "projects",
+            "link": "/projects"
+        },
+        {
+            "title": "About me",
+            "slug": "about",
+            "link": "/about"
+        },
+        {
+            "title": "Contact",
+            "slug": "contact",
+            "link": "/contact"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+<section class="hero">
+    <div class="hero-content column">
+        <h1 data-aos="fade-right">{{sections.hero.title}}</h1>
+        <div>
+            <img class="profile-picture" src="{{config.profile_picture}}" alt="Picture of myself"
+                data-aos="fade-right" />
+            <div>
+                <ul>
+                    {{#each sections.hero.lines}}
+                    <li data-aos="fade-left" data-aos-delay="{{@index}}00">{{{.}}}</li>
+                    {{/each}}
+                </ul>
+                <a class="contact" href="/contact">{{sections.hero.contact}}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="projects-section column">
+    <h2 data-aos="fade-right">{{sections.projects.title}}</h2>
+    <p data-aos="fade-right">{{sections.projects.description}}</p>
+    {{> projectsList projects=featuredProjects}}
+    <p>
+        <a href="/projects">{{sections.projects.see_all}}</a>
+    </p>
+</section>
+
+<section class="about-section">
+    <div class="about-content column text">
+        <h2 data-aos="fade-right">{{sections.about.title}}</h2>
+        <div data-aos="fade-left">
+            {{{content}}}
+        </div>
+    </div>
+</section>

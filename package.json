@@ -1,0 +1,50 @@
+{
+    "name": "portfolio-skeleton",
+    "version": "0.0.1",
+    "description": "Skeleton for a static generated portfolio website",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rm -rf dist",
+        "dev:site": "nodemon -e js,json,md,handlebars --watch data --watch src/views --watch index.js --watch lib.js",
+        "dev:client": "webpack serve --mode development",
+        "build:client": "webpack --mode production",
+        "build:site": "node index.js",
+        "build": "npm run clean && npm run build:client && npm run build:site",
+        "deploy": "npx netlify deploy --dir=dist --prod"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/spicedacademy/portfolio-skeleton.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/spicedacademy/portfolio-skeleton/issues"
+    },
+    "homepage": "https://github.com/spicedacademy/portfolio-skeleton#readme",
+    "dependencies": {
+        "aos": "^2.3.4",
+        "express": "^4.18.1",
+        "express-handlebars": "^6.0.6",
+        "fs-extra": "^10.1.0",
+        "globby": "^11.1.0",
+        "gray-matter": "^4.0.3",
+        "marked": "^4.1.0"
+    },
+    "devDependencies": {
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.7.1",
+        "mini-css-extract-plugin": "^2.6.1",
+        "netlify-cli": "^11.5.1",
+        "nodemon": "^2.0.19",
+        "postcss": "^8.4.16",
+        "postcss-loader": "^7.0.1",
+        "postcss-normalize": "^10.0.1",
+        "postcss-preset-env": "^7.8.0",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dev-server": "^4.10.1",
+        "write-file-webpack-plugin": "^4.5.1"
+    }
+}
